@@ -13,8 +13,9 @@ urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls), prefix_default_language=False
 )
 
-urlpatterns += []
-
+urlpatterns += [
+    path("", include("apps.resume.urls")),
+]
 # This is only needed when using runserver.
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

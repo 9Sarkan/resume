@@ -1,3 +1,4 @@
-from django.urls import path, include
+from django.urls import path
+from .views import index
 
-urlpatterns = ()
+urlpatterns = (path("", index, name="index"),)

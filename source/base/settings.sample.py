@@ -30,15 +30,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Third Parties
-    "rest_framework",
-    "corsheaders",
-    "drf_yasg",
     # Locals
-    "apps.sample-app",
+    "apps.resume",
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -77,9 +73,9 @@ WSGI_APPLICATION = "base.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": get_env("sample-project-postgres-db", "sample-project"),
-        "USER": get_env("sample-project-postgres-user", "sample-project_user"),
-        "PASSWORD": get_env("sample-project-postgres-passwd", "1234"),
+        "NAME": get_env("POSTGRES_DB", "resume_db"),
+        "USER": get_env("POSTGRES_USER", "resume_user"),
+        "PASSWORD": get_env("POSTGRES_PASSWORD", "1234"),
         "HOST": get_env("POSTGRES_HOST", raise_exception=True),
         "PORT": get_env("POSTGRES_PORT", raise_exception=True),
     }

@@ -9,3 +9,6 @@ endif
 
 settings:
 	cp source/base/settings.sample.py source/base/settings.py
+
+env:
+	cp .sample.env .env

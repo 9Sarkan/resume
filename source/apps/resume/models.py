@@ -18,17 +18,20 @@ class Info(models.Model):
         ],
     )
     email = models.EmailField(_("Email"))
-    bio = models.CharField(_("Bio"), max_length=512)
+    bio = models.TextField(_("Bio"), max_length=512)
     linked_in = models.URLField(_("LinkedIn"), null=True, blank=True)
     github = models.URLField(_("Github"), null=True, blank=True)
     gitlab = models.URLField(_("Gitlab"), null=True, blank=True)
     telegram = models.URLField(_("Telegram"), null=True, blank=True)
-    interests = models.CharField(_("Interests"), max_length=512)
+    interests = models.TextField(_("Interests"), max_length=512)
     profile_photo = models.ImageField(
         _("Profile"), upload_to="profile", null=True, blank=True
     )
 
     def __str__(self):
+        return self.get_full_name()
+
+    def get_full_name(self):
         return "%s %s" % (self.first_name, self.last_name)
 
 

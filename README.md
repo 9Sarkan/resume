@@ -14,7 +14,7 @@ This project created according to web programming courses Master, Mr. Khademi or
 3. install requirements:
     
     ```bash
-    install -r requirements/development.txt`
+    install -r requirements/development.txt
     ```
 
 4. create settings and env file:
